@@ -1,0 +1,36 @@
+# Movie_recommendation_BERT 
+ 
+#0) read_data from google drive
+
+#1) TMDN_Dataset
+ #1.1) get genres & overview from movies
+ #1.2) tokenize data using BERT_Tokenizer
+ #1.3) make input_form : [CLS] + genres + [SEP] + overview + [SEP]
+ #1.4) make input be tensor
+
+ #1.5) normalize label(make mean 1)
+  #1.5.1) popularity
+  #1.5.2) vote_average
+  #1.5.3) vote_count
+ #1.6) make input_target : popularity + vote_average * vote_count
+
+#2) TMDM_Model
+ #2.1) using Bert_base model
+ #2.2) get last_hidden_states
+ #2.3) get apool & mpool
+
+#3) TMDM_Loss
+ #3.1) using BCE_Loss
+
+#4) TMDM_Train
+
+#5) TMDM_Fit
+
+#6) TMDM_embedding_matrix
+ #6.1) get embedding_matrix that has information about movies
+
+#7) TMDM_Recommendation
+ #7.1) get_recommendation_function
+ #7.2) get_embedding_function
+  #7.2.1) prepare dataset & position_data
+  #7.2.2) get_embedding : word_embedding + token_type_embedding + position_embedding 
