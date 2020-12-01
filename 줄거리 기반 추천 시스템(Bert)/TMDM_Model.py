@@ -15,7 +15,7 @@ class recommendation_model(nn.Module):
     self.hidden = 768 * 2
     self.out = 1
     self.linear = nn.Linear(self.hidden, self.out)
-    self.dropout = nn.Dropout(0.5)
+    self.dropout = nn.Dropout(0.7)
     self.activation = nn.Sigmoid()
 
   def forward(self, input_ids, token_type_ids, attention_mask):
