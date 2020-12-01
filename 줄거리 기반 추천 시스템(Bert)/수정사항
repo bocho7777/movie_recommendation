@@ -10,4 +10,5 @@ TMDM_Model에서 dropout 비율을 0.5에서 0.7로 증가시킴
 evaluate_cls 함수 추가
 --> bert학습 평가용 
 --> self-training에는 이진분류 task에서 정확도 93.5를 기록한 epoch 4 모델을 사용
+(그 이유는 self-training 시에 가장 많은 positive label을 생성했기 때문임)
 --> Trained_TMDM = torch.load('/content/gdrive/My Drive/' + f'TMDM_Model:{4}') (수정 날짜 20201202)
