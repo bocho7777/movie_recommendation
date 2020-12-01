@@ -14,4 +14,4 @@ TMDM_Dataset과 같은 구조임(model도 똑같음)
 5. positive_label을 22000개에 가깝게(Movies Plot (Cleaned) data 의 반) 하는 것이 훈련의 목적이었고
 epoch 4 tmdm_model이 16000개로 가장 근접함.
 
-6.완벽하지는 않지만 unlabeled_data를 이용할 수 있는 가능성을 찾은......듯!!
+6.완벽하지는 않지만 unlabeled_data를 이용할 수 있는 가능성은 찾음.
