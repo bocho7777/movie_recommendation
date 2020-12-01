@@ -28,7 +28,6 @@ class TMDM_Dataset(torch.utils.data.Dataset):
   def __init__(self, movie_data, max_len, tokenizer):
     self.movie_data = movie_data
     self.max_len = max_len
-    self.min_len = 10
     self.tokenizer = tokenizer
     self.encoded_cls = self.tokenizer.convert_tokens_to_ids('[CLS]')
     self.encoded_sep = self.tokenizer.convert_tokens_to_ids('[SEP]')
@@ -36,7 +35,7 @@ class TMDM_Dataset(torch.utils.data.Dataset):
     self.popularity_mean = 21.49230058817409
     self.vote_average_mean = 6.092171559442011
     self.vote_count_mean = 690.2179887570269
-    self.target_threshold = 2.04
+    self.target_threshold = 0.95
 
   def __len__(self):
     return len(self.movie_data)
@@ -85,7 +84,7 @@ class TMDM_Dataset(torch.utils.data.Dataset):
 
     #1.3) make input_form : [CLS] + genres + [SEP] + content + [SEP]
     if len(genres_encoded) + len(content_encoded) >= (self.max_len - 3):
-      content_encoded = content_encoded[:(self.max_len - 3 - len(genres))]
+      content_encoded = content_encoded[:(self.max_len - 3 - len(genres_encoded))]
        
     input_ids = [self.encoded_cls] + genres_encoded + [self.encoded_sep] + \
     content_encoded + [self.encoded_sep]
