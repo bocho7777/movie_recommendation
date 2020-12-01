@@ -1,0 +1,13 @@
+TMDM_Dataset 에서 self.target_threshold를 2.4에서 0.9로 변경 
+--> positive_label 증가(1200개에서 2400개로) (수정 날짜 20201202)
+
+TMDM_Dataloader에서 max_len을 80에서 100으로 조절 (수정 날짜 20201202)
+
+TMDM_Model에서 dropout 비율을 0.5에서 0.7로 증가시킴 
+--> overfitting 방지  (수정 날짜 20201202)
+
+
+evaluate_cls 함수 추가
+--> bert학습 평가용 
+--> self-training에는 이진분류 task에서 정확도 93.5를 기록한 epoch 4 모델을 사용
+--> Trained_TMDM = torch.load('/content/gdrive/My Drive/' + f'TMDM_Model:{4}') (수정 날짜 20201202)
