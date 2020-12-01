@@ -1,0 +1,21 @@
+# Self_training : Movie_recommendation_unlabeled
+
+#0) prepare data
+
+#1) Self_training_Dataset : this dataset has no label(popularity, vote...), 
+ #1.1) get genres, overview, keywords
+ #1.2) tokenize data using BERT_Tokenizer
+ #1.3) make input_form : [CLS] + genres + [SEP] + overview + keywords + [SEP]
+ #1.4) make token_type_ids
+ #1.5) make attention_mask
+ #1.6) padding input to max_len & make tensor form
+
+#2) Self_training_Model
+ #2.1) using Bert_base model
+ #2.2) get last_hidden_states
+ #2.3) get apool & mpool
+
+#3) call_trained_model (tmdm_model)
+
+#4) Self_training_Labeling : by trained_tmdm, determine unlabeled_data's label
+ #4.1) prepare train_dataloader which has unlabeled_data
