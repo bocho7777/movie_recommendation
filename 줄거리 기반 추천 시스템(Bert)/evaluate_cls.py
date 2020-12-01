@@ -28,3 +28,4 @@ def evaluate_cls(dataloader, model):
 preds, labels = evaluate_cls(train_dataloader, Trained_TMDM)
 from sklearn.metrics import accuracy_score
 accuracy_score(preds, labels) #--> epoch 4 model's accuracy : 93.5%
+                              #--> epoch 8 model's accuracy : 99.8%
