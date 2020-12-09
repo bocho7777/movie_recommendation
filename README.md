@@ -1,4 +1,4 @@
-# Movie Reccomendation 
+# Movie Recomendation 
 
 # 영화 추천 시스템 웹서비스 구현하기 
 ##### 딥러닝 : tensorflow, 웹 서버: flask 프론트: Vue.js (API를 통한 연동)  
